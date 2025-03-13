@@ -8,15 +8,16 @@ import rightbackground from "../assets/Vector 3.png";
 
 const About = ({ darkMode }) => {
   return (
-    <div className={`h-screen w-full flex flex-col relative overflow-hidden ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`h-full w-full pb-48 flex flex-col relative overflow-hidden ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+
 
       {/* Main Content */}
       <div className="flex-grow flex">
-        {/* Social Icons Section with Hand Images */}
+      
         <div className="flex flex-col justify-end items-center p-4 ml-10 relative">
 
           {/* Hand Images Container */}
-          <div className="absolute top-[-50px] left-[-40px] w-[300px] h-[450px] mt-8">
+          <div className="absolute top-[-50px] left-[-40px] w-[300px] h-[450px] mt-10">
             {/* Hand Background (Behind the Hand) */}
             <img
               src={handbackground}
@@ -34,7 +35,7 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* About Content Section */}
-        <div className={`flex items-center justify-center w-[950px] h-[564px] mx-auto p-6 ${darkMode ? 'bg-black' : 'bg-white'}`} style={ { fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>
+        <div className={`flex items-center justify-center w-[850px] h-[564px] mx-auto p-6 ${darkMode ? 'bg-black' : 'bg-white'}`} style={{ fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif' }}>
           <div>
             {/* Title with Line in Same Row */}
             <div className="flex items-center justify-between w-full">
@@ -42,53 +43,65 @@ const About = ({ darkMode }) => {
                 <span className='text-5xl'>T</span>his is it ;)
               </h1>
               <h1 className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-2xl`}>
-                ________________________________________________________________________
+                ____________________________________________________________
               </h1>
             </div>
 
             <p className="text-lg mt-4">
-             <b>Anish Kr. Sinha </b>is an Indian <b> UI/UX Designer & Front End Developer</b> with a passion for designing beautiful and fuctional user experiences. Typically, he’s Driven & permanently Curious. He’s obsessed with designing things and even more obsessed with designing cool & clean stuff for the web and mobile. He has been in the business of creating since he hung his first painting on the wall when he was 11 .
+              <b>Anish Kr. Sinha </b>is an Indian <b> UI/UX Designer & Front End Developer</b> with a passion for designing beautiful and fuctional user experiences. Typically, he’s Driven & permanently Curious. He’s obsessed with designing things and even more obsessed with designing cool & clean stuff for the web and mobile. He has been in the business of creating since he hung his first painting on the wall when he was 11 .
             </p>
 
             <p className="text-lg">
-            He holds a <b>bachelor degree in Computer Applications</b>. During his graduation, he has been actively involved in the web design community for the last 3 years. he has designed websites for small businesses, events, nonprofits and more. Currently he’s based in Bihar, India. Where he’s working as an independent creative.
+              He holds a <b>bachelor degree in Computer Applications</b>. During his graduation, he has been actively involved in the web design community for the last 3 years. he has designed websites for small businesses, events, nonprofits and more. Currently he’s based in Bihar, India. Where he’s working as an independent creative.
             </p>
 
             <p className="text-lg mt-4">
-            His interests, however, extend beyond the web and he loves helping people with branding and print design. He even loves designing <b>3D floor plans</b>.
+              His interests, however, extend beyond the web and he loves helping people with branding and print design. He even loves designing <b>3D floor plans</b>.
             </p>
 
             <p className="text-lg mt-4">
-            When he’s not designing, he’s probably hanging out with his girlfriend, watching series, sketching or messing around on something inspired by YouTube tutorials.
+              When he’s not designing, he’s probably hanging out with his girlfriend, watching series, sketching or messing around on something inspired by YouTube tutorials.
             </p>
             <br />
-            <h1 className="text-center">_______________________________________________</h1>
+            <h1 className="text-center">_________________________________________</h1>
           </div>
         </div>
 
         {/* Yellow, Gray & Right Background Images */}
         <div className="absolute w-full bottom-0">
-          <img
-            src={yellowbackground}
-            alt="Yellow Background"
-            className={`absolute left-60 bottom-[-60px] w-[250px] h-[250px] `}
-          />
-
-          <img
-            src={graybackground}
-            alt="Gray Background"
-            className={`absolute right-60 bottom-[-40px] w-[300px] h-[300px] `}
-          />
 
           <img
             src={rightbackground}
             alt="Right Background"
-            className={`absolute right-[0px] bottom-[40px] w-[300px] h-[564px] `}
+            className={`absolute right-[0px] bottom-[180px] w-[280px] h-[564px] `}
           />
+
+
+          <div className="relative bottom-[75px]  flex justify-center items-end gap-28">
+
+            <img
+              src={yellowbackground}
+              alt="Yellow Background"
+              className="absolute left-60 bottom-[-50px] w-[220px] h-[220px] opacity-90"
+            />
+
+            <img
+              src={graybackground}
+              alt="Gray Background"
+              className="absolute right-60 bottom-[-70px] w-[300px] h-[300px] opacity-90"
+            />
+
+          </div>
+
+
         </div>
 
+
+
+
+
         {/* Social Icons at Bottom Left */}
-        <div className="absolute bottom-5 left-5 flex flex-col gap-3 z-20 mx-4">
+        <div className="absolute bottom-20 left-14 flex flex-col gap-3 z-20 mx-4">
           {[
             { Icon: FaFacebook, link: "https://facebook.com" },
             { Icon: FaTwitter, link: "https://twitter.com" },
@@ -112,13 +125,19 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Vertical Email at Bottom Right */}
-        <div className="absolute bottom-[160px] right-3 rotate-90 font-bold z-20">
+        <div className="absolute bottom-[80px] top-2 right-32 rotate-90 font-bold z-20" style={{
+          writingMode: "vertical-lr",  // Text flows vertically
+          transform: "rotate(180deg)", // Starts from bottom to top
+          letterSpacing: "2px",        // Adds spacing between letters
+          color: darkMode ? "white" : "black",
+          fontSize: "16px"
+        }}>
           sinhaanishkumar@outlook.com
         </div>
 
         {/* Decorative Line */}
         <h3 className='absolute bottom-[-10px] right-24 rotate-180 text-gray-700 font-bold z-20'>
-          ___________
+          <b>___________</b>
         </h3>
       </div>
     </div>

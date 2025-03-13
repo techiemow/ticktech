@@ -83,12 +83,20 @@ const Home = ({ activeSection, darkMode }) => {
               />
 
               {/* Email & Line */}
-              <div className={`absolute bottom-1/4 right-[-30px] rotate-90 font-bold z-20 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
-                sinhaanishkumar@outlook.com
-              </div>
-              <h3 className={`absolute bottom-1 right-16 rotate-180 font-bold z-20 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
-                _______
-              </h3>
+              <div className="absolute bottom-[80px] top-2 right-10 rotate-90 font-bold z-20" style={{
+          writingMode: "vertical-lr",  // Text flows vertically
+          transform: "rotate(180deg)", // Starts from bottom to top
+          letterSpacing: "2px",        // Adds spacing between letters
+          color: darkMode ? "white" : "black",
+          fontSize: "16px"
+        }}>
+          sinhaanishkumar@outlook.com
+        </div>
+
+        {/* Decorative Line */}
+        <h3 className='absolute bottom-[-10px] right-2 rotate-180 text-gray-700 font-bold z-20'>
+          <b>___________</b>
+        </h3>
             </div>
           </div>
         )}
