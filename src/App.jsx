@@ -16,7 +16,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={darkMode ? 'dark bg-black text-white' : 'bg-white text-black'}>
+    <div className={`${darkMode ? 'dark bg-black text-white' : 'bg-white text-black'}`}>
       <Navigation setActiveSection={setActiveSection} darkMode={darkMode} setDarkMode={setDarkMode} />
       <Home activeSection={activeSection} darkMode={darkMode} />
     </div>
