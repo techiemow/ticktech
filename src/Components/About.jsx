@@ -112,11 +112,7 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Vertical Email at Bottom Right */}
-        <div className="absolute bottom-[160px] right-3 rotate-90 font-bold z-20" style={{ 
-        writingMode: 'vertical-rl', 
-        textOrientation: 'upright', 
-        letterSpacing: '3px' 
-    }}>
+        <div className="absolute bottom-[160px] right-3 rotate-90 font-bold z-20">
           sinhaanishkumar@outlook.com
         </div>
 
