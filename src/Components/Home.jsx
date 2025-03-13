@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
-import Navigation from "./Navigation"; // New Navigation Component
+import React from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaYoutube, FaEnvelope } from 'react-icons/fa';
 import Hello from "../assets/Hello.png";
 import About from './About';
+import profile from "../assets/Hero Image.png";
 
-
-const Home = () => {
-  const [activeSection, setActiveSection] = useState('home');
-
+const Home = ({ activeSection, darkMode }) => {
   return (
-    <div className="h-screen w-full flex flex-col">
-      {/* Navigation Component */}
- 
-
-      {/* Main Content */}
+    <div className={`h-[calc(100vh-100px)] w-full flex flex-col ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <div className="flex-grow flex">
         {activeSection === 'home' && (
           <div className="h-full w-full flex relative">
-            {/* Social Icons Section */}
             <div className="flex flex-col justify-end items-center p-4 ml-5">
               {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaYoutube, FaEnvelope].map((Icon, index) => (
                 <a key={index} href="#" className="text-white text-2xl my-2 p-2 rounded-full bg-gray-700 hover:bg-blue-500 transition">
@@ -26,8 +18,7 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Content Section */}
-            <div className="w-1/2 flex items-center justify-center p-6 ">
+            <div className="w-1/2 flex items-center justify-center p-6">
               <div>
                 <img src={Hello} alt="HELLO" width={200} height={100} />
                 <h1 className="text-4xl font-bold mt-4">I'm <u>Anish</u></h1>
@@ -36,17 +27,17 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Image Section */}
-            <div className="w-1/2 flex items-center justify-center p-8 bg-gray-200 relative">
-              <img 
-                src="/profile-pic.png" 
-                alt="Mowriyaa B K" 
-                className="rounded-2xl w-60 h-60 object-cover shadow-lg border-4 border-blue-400"
-              />
-              {/* Vertical Email at Bottom Right */}
-              <div className="absolute bottom-4 right-4 rotate-90 text-gray-700 font-bold">
+            <div className="w-1/2 flex items-center justify-center p-8 relative">
+              <div className="absolute inset-0 bg-[url('../assets/Hero Background.svg')] bg-cover bg-center opacity-30 rounded-2xl" />
+              
+              <img src={profile} alt="Anish" className="rounded-2xl w-60 h-60 object-cover shadow-lg border-4 z-10" />
+
+              <div className="absolute bottom-1/4 right-3 rotate-90 text-gray-700 font-bold z-20">
                 anish@example.com
               </div>
+              <h3 className='absolute bottom-1 right-16 rotate-180 text-gray-700 font-bold z-20'>
+                ______
+              </h3>
             </div>
           </div>
         )}
