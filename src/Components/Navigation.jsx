@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from "../assets/Logo.svg";
+import logodark from "../assets/logodark.png";
+import sun from "../assets/Group.png"; // Sun Image Import
 import { BsMoonStarsFill } from "react-icons/bs";
-import { MdOutlineWbSunny } from "react-icons/md";
-import logodark from "../assets/logodark.png"
-
 
 const Navigation = ({ setActiveSection, darkMode, setDarkMode }) => {
     const toggleDarkMode = () => setDarkMode(!darkMode);
@@ -11,7 +10,7 @@ const Navigation = ({ setActiveSection, darkMode, setDarkMode }) => {
     return (
         <nav className={`p-4 shadow-sm ${darkMode ? 'text-white bg-black' : 'text-black bg-white'}`}>
             <div className="container mx-auto flex justify-between items-center">
-                
+
                 {/* Logo Change Based on Dark Mode */}
                 <div className="flex items-center space-x-3">
                     <img 
@@ -29,13 +28,17 @@ const Navigation = ({ setActiveSection, darkMode, setDarkMode }) => {
                     <a href="#skills" >Skills</a>
                     <a href="#projects" >Projects</a>
                     <a href="#contact" >Contact</a>
-                    <button 
-                        onClick={toggleDarkMode} 
-                        className={`text-2xl rounded-full 
-                                    ${darkMode ? 'bg-yellow-400 text-black' : ''} 
-                                    hover:scale-110 transition duration-300`}
+
+                    {/* Dark Mode Toggle */}
+                    <button
+                        onClick={toggleDarkMode}
+                        className={`text-2xl rounded-full hover:scale-110 transition duration-300`}
                     >
-                        {darkMode ? <MdOutlineWbSunny /> : <BsMoonStarsFill />}
+                        {darkMode ? (
+                            <img src={sun} alt="Sun Icon" className="h-7 w-7" />
+                        ) : (
+                            <BsMoonStarsFill />
+                        )}
                     </button>
                 </div>
 
@@ -48,3 +51,4 @@ const Navigation = ({ setActiveSection, darkMode, setDarkMode }) => {
 };
 
 export default Navigation;
+

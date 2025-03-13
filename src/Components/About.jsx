@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaYoutube, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaGithub, FaLinkedin, FaFacebook, FaTelegram } from 'react-icons/fa';
+import kooLogo from "../assets/Koo_Logo.png"
+
 import hand from "../assets/Rectangle.png";
 import handbackground from "../assets/Vector 1.png";
 import yellowbackground from "../assets/Vector 4.png";
@@ -13,7 +15,7 @@ const About = ({ darkMode }) => {
 
       {/* Main Content */}
       <div className="flex-grow flex">
-      
+
         <div className="flex flex-col justify-end items-center p-4 ml-10 relative">
 
           {/* Hand Images Container */}
@@ -73,7 +75,7 @@ const About = ({ darkMode }) => {
           <img
             src={rightbackground}
             alt="Right Background"
-            className={`absolute right-[0px] bottom-[180px] w-[280px] h-[564px] `}
+            className={`absolute right-[0px] bottom-[210px] w-[280px] h-[564px] `}
           />
 
 
@@ -99,17 +101,15 @@ const About = ({ darkMode }) => {
 
 
 
-
-        {/* Social Icons at Bottom Left */}
-        <div className="absolute bottom-20 left-14 flex flex-col gap-3 z-20 mx-4">
+        <div className="absolute bottom-24 left-16 flex flex-col gap-3 z-20 mx-4">
           {[
-            { Icon: FaFacebook, link: "https://facebook.com" },
-            { Icon: FaTwitter, link: "https://twitter.com" },
-            { Icon: FaLinkedin, link: "https://linkedin.com" },
+            { Icon: () => <img src={kooLogo} alt="Koo" className="w-6 h-6" />, link: "https://www.kooapp.com" },
             { Icon: FaInstagram, link: "https://instagram.com" },
+            { Icon: FaTwitter, link: "https://twitter.com" },
             { Icon: FaGithub, link: "https://github.com" },
-            { Icon: FaYoutube, link: "https://youtube.com" },
-            { Icon: FaEnvelope, link: "mailto:anish@example.com" }
+            { Icon: FaLinkedin, link: "https://linkedin.com" },
+            { Icon: FaFacebook, link: "https://facebook.com" },
+            { Icon: FaTelegram, link: "https://telegram.org" }
           ].map(({ Icon, link }, index) => (
             <a
               key={index}
@@ -125,10 +125,10 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Vertical Email at Bottom Right */}
-        <div className="absolute bottom-[80px] top-2 right-32 rotate-90 font-bold z-20" style={{
+        <div className="absolute bottom-[60px] top-1 right-14 rotate-90 font-bold z-20" style={{
           writingMode: "vertical-lr",  // Text flows vertically
           transform: "rotate(180deg)", // Starts from bottom to top
-          letterSpacing: "2px",        // Adds spacing between letters
+          letterSpacing: "1px",        // Adds spacing between letters
           color: darkMode ? "white" : "black",
           fontSize: "16px"
         }}>
@@ -136,8 +136,8 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Decorative Line */}
-        <h3 className='absolute bottom-[-10px] right-24 rotate-180 text-gray-700 font-bold z-20'>
-          <b>___________</b>
+        <h3 className='absolute bottom-[-10px] right-12 rotate-180 text-gray-700 font-bold z-20'>
+          <b>______</b>
         </h3>
       </div>
     </div>
