@@ -65,22 +65,25 @@ const Home = ({ activeSection, darkMode }) => {
                 </p>
 
                 {/* Buttons Section */}
+                {/* Buttons Section */}
                 <div className="mt-6 flex gap-4">
                   <button
                     className="bg-orange-500 text-white px-6 py-3 font-semibold 
-                    hover:bg-orange-600 active:scale-95 transition duration-200 shadow-md border-x-white border-8"
+    hover:bg-orange-600 active:scale-95 transition duration-200 
+    shadow-md border-x-white border-4"
                   >
                     Download CV
                   </button>
 
                   <button
                     className="bg-gradient-to-r from-gray-900 to-black text-white px-6 py-3 
-                    font-semibold hover:from-black hover:to-gray-800 active:scale-95 
-                    transition duration-200 shadow-md border-x-white border-8"
+    font-semibold hover:from-black hover:to-gray-800 active:scale-95 
+    transition duration-200 shadow-md border-x-white border-4"
                   >
                     Get in Touch!
                   </button>
                 </div>
+
               </div>
             </div>
 
